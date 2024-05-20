@@ -2,7 +2,7 @@
 
 int choice;
 List<Employee> employeesList = [];
-EmployeeRegister employeeRegister = new EmployeeRegister();
+EmployeeRegister employeeRegister = new EmployeeRegister(employeesList);
 do
 {
     Console.WriteLine("Enter the number to choose \n" +
@@ -31,7 +31,7 @@ do
             if (int.TryParse(employeeSalaryInput, out _))
             {
                 Employee employee = new Employee(employeeNameInput, Convert.ToInt32(employeeSalaryInput));
-                employeesList.Add(employee);
+                employeeRegister.Employees.Add(employee);
                 Console.WriteLine($"Added employee {employee.Name} with salary {employee.Salary} to the list.");
             }
             else
@@ -42,7 +42,7 @@ do
             break;
         case 2:
             Console.WriteLine("List of employees:");
-            employeeRegister.PresentRegister(employeesList);
+            employeeRegister.PresentRegister(employeeRegister.Employees);
 
 
             break;
