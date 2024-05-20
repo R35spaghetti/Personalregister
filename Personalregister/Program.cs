@@ -1,8 +1,6 @@
 ﻿using Personalregister.Models;
 
 int choice;
-List<Employee> employeesList = new List<Employee>();
-
 List<Employee> employeesList = [];
 EmployeeRegister employeeRegister = new EmployeeRegister();
 do
