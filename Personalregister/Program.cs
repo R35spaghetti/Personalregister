@@ -21,6 +21,11 @@ do
         case 1:
             Console.WriteLine("Enter employee's name");
             string employeeNameInput = Console.ReadLine() ?? string.Empty;
+            if (employeeNameInput.Equals(""))
+            {
+                Console.WriteLine("Empty name input, returning to menu");
+                break;
+            }
             Console.WriteLine("Enter employee's salary");
             string employeeSalaryInput = Console.ReadLine() ?? string.Empty;
             if (int.TryParse(employeeSalaryInput, out _))
