@@ -6,14 +6,19 @@ List<Employee> employeesList = new List<Employee>();
 do
 {
     Console.WriteLine("Enter the number to choose \n" +
-                      " 0 - Add employee \n" +
-                      " 1 - Show all employees \n" +
-                      " 2 - Exit program");
-    choice = Convert.ToInt32(Console.ReadLine());
+                      " 1 - Add employee \n" +
+                      " 2 - Show all employees \n" +
+                      " 3 - Exit program");
+    bool validChoice = Int32.TryParse(Console.ReadLine(), out choice);
 
+    if (!validChoice)
+    {
+        ErrorMessageInvalidChoice();
+    }
+    
     switch (choice)
     {
-        case 0:
+        case 1:
             Console.WriteLine("Enter employee's name");
             string employeeNameInput = Console.ReadLine() ?? string.Empty;
             Console.WriteLine("Enter employee's salary");
@@ -23,7 +28,7 @@ do
             employeesList.Add(employee);
             Console.WriteLine($"Added employee {employee.Name} with salary {employee.Salary} to the list.");
             break;
-        case 1:
+        case 2:
             Console.WriteLine("List of employees:");
             foreach (var item in employeesList)
             {
@@ -31,11 +36,15 @@ do
             }
 
             break;
-        case 2:
+        case 3:
             Console.WriteLine("Exits program..");
             break;
-        default:
-            Console.WriteLine("Invalid choice, enter either 1 or 0.");
-            break;
+   
     }
-} while (choice != 2);
+} while (choice != 3);
+
+void ErrorMessageInvalidChoice()
+{
+    Console.WriteLine("Invalid choice, please enter a number between 1-3");
+
+}
