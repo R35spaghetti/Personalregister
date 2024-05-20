@@ -1,4 +1,4 @@
-using Personalregister.Contract;
+using Personalregister.Contracts;
 
 namespace Personalregister.Models;
 

@@ -1,4 +1,4 @@
-namespace Personalregister.Contract;
+namespace Personalregister.Contracts;
 
 public interface IEmployee
 { 
