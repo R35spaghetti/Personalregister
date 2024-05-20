@@ -3,6 +3,8 @@
 int choice;
 List<Employee> employeesList = new List<Employee>();
 
+List<Employee> employeesList = [];
+EmployeeRegister employeeRegister = new EmployeeRegister();
 do
 {
     Console.WriteLine("Enter the number to choose \n" +
@@ -30,10 +32,8 @@ do
             break;
         case 2:
             Console.WriteLine("List of employees:");
-            foreach (var item in employeesList)
-            {
-                Console.WriteLine($"Employee {item.Name} with salary {item.Salary}");
-            }
+            employeeRegister.PresentRegister(employeesList);
+
 
             break;
         case 3:
