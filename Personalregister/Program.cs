@@ -27,7 +27,7 @@ do
             Console.WriteLine("List of employees:");
             foreach (var item in employeesList)
             {
-                Console.WriteLine($"Employee {item.Name} with salary {item.Salary} to the list.");
+                Console.WriteLine($"Employee {item.Name} with salary {item.Salary}");
             }
 
             break;
