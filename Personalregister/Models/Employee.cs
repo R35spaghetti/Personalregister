@@ -1,6 +1,6 @@
 using Personalregister.Contract;
 
-namespace Personalregister;
+namespace Personalregister.Models;
 
 public class Employee(string name, int salary) : IEmployee
 {
